@@ -22,11 +22,11 @@ body{
 
 .main{
     width: 100%;
- background: url("./images/new-memories-41.jpg")no-repeat;
+    background: url("./images/new-memories-41.jpg")no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
-     display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     opacity: .8;
@@ -34,15 +34,17 @@ body{
 
 .login-main{
     padding: 3rem;
-    background: rgba(0, 0, 0, 0.514);
+    background: rgba(0, 0, 0, 0.445);
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.527);
     backdrop-filter: blur(8.6px);
     -webkit-backdrop-filter: blur(5.6px);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    width: 40%;
+    width: 25%;
     margin: auto;
     border-radius: 16px;
+    animation: bg-spin 3s linear infinite;
+  
 }
 
 
@@ -70,12 +72,13 @@ body{
 }
 
 .input{
-    padding: .6rem;
+    padding: .6rem 2.5rem .6rem .1rem;
     background: none;
     border-style: none none solid none;
-     border-color: white;
+    border-color: white;
     margin-bottom: 1.5rem;
     transition: 250ms ease;
+    overflow: hidden;
     
 }
 
@@ -88,22 +91,70 @@ input{
     outline: none;
 }
 
-.input-email , .input-password {
+.input-sub{
     position: relative;
-    
+}
+
+.input-email::before{
+    position: absolute;
+   
+    content: "dasdasdasd";
+    background: url("./images/icons8-email-96.png") no-repeat;
+    background-position:center;
+    background-size: 35px;
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    right: 1px;
+    color: transparent;
+}
+
+.input-password::before{
+    position: absolute;
+   
+    content: "dasdasdasd";
+    background: url("./images/icons8-password-100.png") no-repeat;
+    background-position:center;
+    background-size: 35px;
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    right: 1px;
+    color: transparent;
 }
 
 
-label{
+
+.input-sub label{
+    
+    left: 1px;
     font-size: 18px;
     font-weight: 500;
+    
+}
+
+.lable,
+.labletwo{
+  position: absolute;
+
+}
+
+.input-email:focus ~ label {
+    top: -20px;
+}
+
+.input:focus ~ label {
+    top: -20px;
+}
+
+.input:valid ~ label {
+    top: -20px;
 }
 
 input[type="checkbox"]{
     accent-color: green;
+    
 }
-
-
 .remember{
     display: inline;
 }
@@ -134,6 +185,13 @@ input[type="checkbox"]{
     background-color: white;
     font-size: 1.5rem;
     border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(105%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: aliceblue;
 }
 
 .sign-up{
@@ -146,3 +204,61 @@ input[type="checkbox"]{
 }
 
 
+@media(max-width: 1494px){
+    .login-main{
+    padding: 3rem;
+    width: 35%;
+ 
+}
+
+}
+
+
+@media(max-width: 1330px){
+    .login-main{
+    padding: 3rem;
+    width: 40%;
+ 
+}
+
+}
+
+
+@media(max-width: 943px){
+    .login-main{
+    padding: 3rem;
+    width: 60%;
+ 
+}
+
+}
+
+@media(max-width: 651px){
+    .login-main{
+    padding: 3rem;
+    width: 70%;
+ 
+}
+
+}
+
+
+
+@media(max-width: 480px){
+    .login-main{
+    padding: 3rem;
+    width: 85%;
+ 
+}
+
+}
+
+
+@media(max-width: 413px){
+    .login-main{
+    padding: 2rem;
+    width: 90%;
+ 
+}
+
+}
