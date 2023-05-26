@@ -33,18 +33,39 @@ body{
 }
 
 .login-main{
+    --border-size: 3px;
+    --border-angle: 0turn;
     padding: 3rem;
-    background: rgba(0, 0, 0, 0.445);
-    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.527);
-    backdrop-filter: blur(8.6px);
-    -webkit-backdrop-filter: blur(5.6px);
-    border: 1px solid rgba(0, 0, 0, 0.2);
     width: 25%;
     margin: auto;
-    border-radius: 16px;
-    animation: bg-spin 3s linear infinite;
-  
+   
+    background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03 , rgb(255, 187, 0) , rgb(80, 238, 7), rgb(207, 1, 104));
+    background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: bg-spin 4s linear infinite;
+    
+}
+
+@keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
 
 
@@ -152,7 +173,7 @@ input{
 }
 
 input[type="checkbox"]{
-    accent-color: green;
+    accent-color: rgb(255, 0, 98);
     
 }
 .remember{
